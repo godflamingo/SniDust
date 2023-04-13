@@ -61,6 +61,7 @@ fi
 echo "Starting sniproxy"
 /usr/local/bin/sniproxy --httpPort 80 --httpsPort 443 --allDomains --dnsPort 5353 --publicIP $EXTERNAL_IP &
 echo "[INFO] Using $EXTERNAL_IP - Point your DNS settings to this address"
-wait -n
+
 curl https://ifconfig.me
-docker run -d --name snidust -e ALLOWED_CLIENTS="127.0.0.1, 0.0.0.0" -e EXTERNAL_IP=104.196.232.237 -p 443:443 -p 80:80 -p 53:5300/udp ghcr.io/seji64/snidust:main
+docker run -d --name snidust -e ALLOWED_CLIENTS="127.0.0.1, 0.0.0.0" -e EXTERNAL_IP=34.168.189.35 -p 443:443 -p 80:80 -p 53:5300/udp ghcr.io/seji64/snidust:main
+wait -n
