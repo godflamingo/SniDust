@@ -18,7 +18,7 @@ then
   export DNSDIST_WEBSERVER_API_KEY=$(< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c32)
   echo "Generated WebServer API Key: $DNSDIST_WEBSERVER_API_KEY"
 fi
-
+ALLOWED_CLIENTS="127.0.0.1, 0.0.0.0"
 if [ ! -z ${ALLOWED_CLIENTS_FILE} ];
 then
   if [ -f ${ALLOWED_CLIENTS_FILE} ];
